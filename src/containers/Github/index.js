@@ -18,11 +18,11 @@ function Github() {
 
   const repos = [
     {
-      title: "challenge-event-register",
+      title: "personal-site",
       description:
-        "Challenge - Event Register - Backend: NodeJS | ExpressJS | MongoDB - Frontend: ReactJS | Redux | Saga | Material UI",
-      github: "https://github.com/guercione",
-      liveDemo: "https://brainhub-frontend.herokuapp.com",
+        "Personal Site - React | Redux | Saga | Material UI | Jest | Testing Library",
+      github: "https://github.com/Guercione/personal-site",
+      liveDemo: "http://guercione.com.br",
     },
     {
       title: "challenge-event-register",
