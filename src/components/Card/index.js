@@ -11,6 +11,7 @@ const styles = makeStyles({
   card: {
     maxWidth: 440,
     marginBottom: 15,
+    height: 195,
     backgroundColor: pallete["secondary"],
     "& .MuiCardActions-root": { padding: 16 },
   },
