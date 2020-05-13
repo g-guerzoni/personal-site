@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/Errors/error404.js"],"names":["error404"],"mappings":"sHAAA,2BAIeA,UAFE,kBAAM","file":"static/js/4.25f3725b.chunk.js","sourcesContent":["import React from \"react\";\n\nconst error404 = () => <div>404 - Page Not Found</div>;\n\nexport default error404;\n"],"sourceRoot":""}
