@@ -49,11 +49,7 @@ const theme = createMuiTheme({
 });
 
 const styles = makeStyles({
-  bg: {
-    height: "100vh",
-    width: "100vw",
-    backgroundColor: palette["background"],
-  },
+  bg: { backgroundColor: palette["background"] },
 });
 
 const App = () => (

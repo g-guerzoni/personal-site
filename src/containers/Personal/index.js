@@ -11,7 +11,6 @@ import EmailIcon from "@material-ui/icons/Email";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 
 const styles = makeStyles({
-  content: { paddingTop: "4em" },
   balloon: {
     width: 110,
     height: 36,
@@ -37,8 +36,8 @@ function Personal() {
   const classes = styles();
 
   return (
-    <Grid container justify="space-around" className={classes.content}>
-      <Grid item container xs={12} md={6} direction="column" justify="center">
+    <Grid container>
+      <Grid item xs={12} md={6} container direction="column" justify="center">
         <Grid
           container
           justify="center"
@@ -57,7 +56,7 @@ function Personal() {
             Guercione B. Vecino
           </Typography>
           <Typography variant="h5" className={classes.roleText}>
-            Javascript Developer
+            Javascript Developer | React | Node
           </Typography>
         </Grid>
         <Grid className={classes.personalData}>
@@ -81,7 +80,7 @@ function Personal() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container xs={12} md={6} justify="flex-end">
+      <Grid item xs={12} md={6} container justify="flex-end">
         <Avatar
           alt="Guilherme Vecino"
           src="/images/avatar/guilherme-vecino.jpg"

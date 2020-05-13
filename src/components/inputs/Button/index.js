@@ -5,21 +5,29 @@ import patelle from "constants/palette";
 
 import Loading from "components/Loading";
 import MuiButton from "@material-ui/core/Button";
+import Link from "@material-ui/core/Link";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
-const Button = ({ loading, disabled, children, color, onClick, ...rest }) => {
+const styles = makeStyles({
+  button: {
+    color: (props) =>
+      props.color === "primary" ? patelle["secondary"] : patelle["primary"],
+    backgroundColor: (props) => patelle[props.color] || patelle["secondary"],
+    fontWeight: "bold",
+    height: 40,
+    minWidth: 95,
+    maxWidth: 180,
+  },
+});
+
+function ButtonComponent({ loading, disabled, children, color, onClick }) {
+  const classes = styles({ color });
+
   return (
     <MuiButton
       variant="contained"
-      style={{
-        color:
-          color === "secondary" ? patelle["primary"] : patelle["secondary"],
-        backgroundColor: patelle[color],
-        fontWeight: "bold",
-        height: 40,
-        minWidth: 95,
-      }}
       onClick={disabled || loading ? () => {} : onClick}
-      {...rest}
+      className={classes.button}
     >
       {loading ? (
         <Loading color={color === "primary" ? "secondary" : "primary"} />
@@ -28,20 +36,33 @@ const Button = ({ loading, disabled, children, color, onClick, ...rest }) => {
       )}
     </MuiButton>
   );
-};
+}
 
-Button.propTypes = {
+function Button({ href, download, ...rest }) {
+  if (href) {
+    return (
+      <Link href={href} download={download} underline="none" target="_blanck">
+        <ButtonComponent {...rest} />
+      </Link>
+    );
+  }
+
+  return <ButtonComponent {...rest} />;
+}
+
+ButtonComponent.propTypes = {
   loading: PropTypes.bool,
   disabled: PropTypes.bool,
   children: PropTypes.string.isRequired,
   color: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
-Button.defaultProps = {
+ButtonComponent.defaultProps = {
   loading: false,
   disabled: false,
   color: "primary",
+  button: () => {},
 };
 
 export default Button;
