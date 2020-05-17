@@ -8,9 +8,10 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import makeStyles from "@material-ui/core/styles/makeStyles";
+import If from "components/If";
 
 const styles = makeStyles({
-  chips: {},
+  description: { height: 48 },
 });
 
 function Github() {
@@ -25,25 +26,23 @@ function Github() {
       liveDemo: "http://guercione.com.br",
     },
     {
-      title: "challenge-event-register",
+      title: "react-redux-skeleton",
       description:
-        "Challenge - Event Register - Backend: NodeJS | ExpressJS | MongoDB - Frontend: ReactJS | Redux | Saga | Material UI",
-      github: "https://github.com/guercione",
-      liveDemo: "https://brainhub-frontend.herokuapp.com",
+        "Skeleton - React | Redux | Saga | Material UI | Jest | Testing Library",
+      github: "https://github.com/Guercione/react-redux-skeleton",
     },
     {
       title: "challenge-event-register",
       description:
         "Challenge - Event Register - Backend: NodeJS | ExpressJS | MongoDB - Frontend: ReactJS | Redux | Saga | Material UI",
       github: "https://github.com/guercione",
-      liveDemo: "https://brainhub-frontend.herokuapp.com",
+      liveDemo: "https://brainhub-frontend.herokuapp.com/",
     },
     {
-      title: "challenge-event-register",
-      description:
-        "Challenge - Event Register - Backend: NodeJS | ExpressJS | MongoDB - Frontend: ReactJS | Redux | Saga | Material UI",
-      github: "https://github.com/guercione",
-      liveDemo: "https://brainhub-frontend.herokuapp.com",
+      title: "js-compare-algorithm-performance",
+      description: "Compare algorithm performance - HTML | JS",
+      github: "https://github.com/Guercione/js-compare-algorithm-performance",
+      liveDemo: "https://compare-algorithm-performance.herokuapp.com",
     },
   ];
 
@@ -60,17 +59,23 @@ function Github() {
         >
           <Card>
             <CardContent>
-              <Typography color="primary" variant="h4">
+              <Typography noWrap color="primary" variant="h4">
                 {item.title}
               </Typography>
-              <Typography color="primary" variant="body1">
+              <Typography
+                color="primary"
+                variant="body1"
+                className={classes.description}
+              >
                 {item.description}
               </Typography>
             </CardContent>
             <CardActions>
-              <Button href={item.liveDemo} color="highlight">
-                Live Demo
-              </Button>
+              <If condition={item.liveDemo}>
+                <Button href={item.liveDemo} color="highlight">
+                  Live Demo
+                </Button>
+              </If>
               <Button href={item.github} color="highlight">
                 Github
               </Button>
